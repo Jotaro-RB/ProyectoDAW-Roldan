@@ -143,7 +143,8 @@ h1, h2, h3 {
     justify-content: space-between;
     align-items: center;
     padding: 80px 0;
-    color: var(--color-texto-claro); 
+    color: var(--color-texto-claro);     
+    flex-wrap: wrap; /* Añadido para responsive */
 }
 
 .hero h1, .hero h2 {
@@ -326,6 +327,36 @@ h1, h2, h3 {
 }
 
 /* ----------------------------------------------------- */
+/* --- REGLAS BASE PARA PÁGINAS DE ÁLBUMES ------------- */
+/* ----------------------------------------------------- */
+
+.hero-contenido {
+    display: flex; 
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
+    padding: 80px 0; 
+}
+
+.titulo-album {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.subtitulo-album {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    font-weight: 400;
+}
+
+
+/* ----------------------------------------------------- */
 /* SELF TITLE (ÁLBUM DEBUT)                              */
 /* ----------------------------------------------------- */
 
@@ -357,27 +388,19 @@ h1, h2, h3 {
 }
 
 .hero-self-titled {
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    
     padding: 80px 0;
-
     position: relative; 
     z-index: 1; 
-    
     background-image: url(../imagenes/selftitle-fondo.jpg); 
     background-size: cover; 
     background-position: center center;
     background-repeat: no-repeat;
-
     width: 100vw; 
     position: relative;
     left: 50%;
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
-
     color: var(--color-acento-principal); 
     min-height: 500px; 
 }
@@ -393,8 +416,7 @@ h1, h2, h3 {
     z-index: -1; 
 }
 
-.hero-contenido {
-    display: flex; 
+.album-self-titled .hero-contenido {
     flex-direction: column; 
     align-items: center; 
     justify-content: center;
@@ -404,10 +426,12 @@ h1, h2, h3 {
 .info-self-titled {
     max-width: 800px;
     margin-bottom: 30px;
+    width: 100%; 
 }
 
 .imagen-hero-self-titled {
     margin-bottom: 40px;
+    width: auto;
 }
 
 .portada-grande-self-titled {
@@ -420,16 +444,11 @@ h1, h2, h3 {
 .titulo-self-titled {
     font-size: 3.5rem;
     color: var(--color-acento-principal); 
-    margin-bottom: 20px;
-    line-height: 1.1;
-    text-transform: uppercase; 
     font-family: var(--fuente-principal); 
     font-weight: 700;
 }
 
 .subtitulo-self-titled {
-    font-size: 1.2rem;
-    line-height: 1.8;
     max-width: 700px;
     margin: 0 auto 30px auto;
     font-family: var(--fuente-principal); 
@@ -479,7 +498,7 @@ h1, h2, h3 {
 /*------------------------------------------------------ */
 
 /* ----------------------------------------------------- */
-/* ALBUM VESSEL                                          */
+/* ALBUM VESSEL                                          */
 /* ----------------------------------------------------- */
 
 .album-vessel {
@@ -515,20 +534,13 @@ h1, h2, h3 {
 }
 
 .hero-vessel {
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    
     padding: 80px 0; 
-
     position: relative; 
     z-index: 1; 
-
     background-image: url(../imagenes/vessel-fondo.jpg); 
     background-size: cover; 
     background-position: center center; 
     background-repeat: no-repeat;
-
     width: 100vw; 
     position: relative;
     left: 50%;
@@ -536,7 +548,6 @@ h1, h2, h3 {
     margin-left: -50vw;
     margin-right: -50vw; 
     min-height: 550px;
-    
     color: var(--color-acento-principal); 
 }
 
@@ -555,6 +566,14 @@ h1, h2, h3 {
     background-color: rgba(240, 240, 240, 0.85);
     border-bottom: 1px solid var(--color-vessel); 
     z-index: -1; 
+}
+
+/* Aplicamos las reglas de centrado explícitamente a Vessel */
+.album-vessel .hero-contenido {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .titulo-vessel {
@@ -601,7 +620,7 @@ h1, h2, h3 {
 /* ----------------------------------------------------- */
 
 /* ----------------------------------------------------- */
-/* ALBUM BLURRYFACE                                      */
+/* ALBUM BLURRYFACE                                      */
 /* ----------------------------------------------------- */
 
 .album-blurryface {
@@ -637,20 +656,13 @@ h1, h2, h3 {
 }
 
 .hero-blurryface {
- display: flex; 
- align-items: center; 
- justify-content: center; 
- 
  padding: 100px 0;
- 
  position: relative; 
  z-index: 1; 
- 
  background-image: url(../imagenes/blurryface-fondo.jpg); 
  background-size: cover; 
  background-position: center center; 
  background-repeat: no-repeat;
- 
  width: 100vw; 
  position: relative;
  left: 50%;
@@ -658,7 +670,6 @@ h1, h2, h3 {
  margin-left: -50vw;
  margin-right: -50vw; 
  min-height: 550px;
- 
  color: var(--color-texto-claro); 
 }
 
@@ -677,6 +688,14 @@ h1, h2, h3 {
  background-color: rgba(0, 0, 0, 0.4); 
  border-bottom: 1px solid var(--color-blurryface); 
  z-index: -1; 
+}
+
+/* Aplicamos las reglas de centrado explícitamente a Blurryface */
+.album-blurryface .hero-contenido {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .titulo-blurryface {
@@ -734,7 +753,7 @@ h1, h2, h3 {
 /* ----------------------------------------------------- */
 
 /* ----------------------------------------------------- */
-/* ALBUM TRENCH                                          */
+/* ALBUM TRENCH                                          */
 /* ----------------------------------------------------- */
 
 .album-trench {
@@ -770,20 +789,13 @@ h1, h2, h3 {
 }
 
 .hero-trench {
- display: flex; 
- align-items: center; 
- justify-content: center; 
- 
  padding: 100px 0;
- 
  position: relative; 
  z-index: 1; 
- 
  background-image: url(../imagenes/trench-fondo.jpg); 
  background-size: cover; 
  background-position: center center; 
  background-repeat: no-repeat;
- 
  width: 100vw; 
  position: relative;
  left: 50%;
@@ -791,7 +803,6 @@ h1, h2, h3 {
  margin-left: -50vw;
  margin-right: -50vw; 
  min-height: 550px;
- 
  color: var(--color-texto-claro); 
 }
 
@@ -810,6 +821,14 @@ h1, h2, h3 {
  background-color: rgba(0, 0, 0, 0.4); 
  border-bottom: 1px solid var(--color-trench); 
  z-index: -1; 
+}
+
+/* Aplicamos las reglas de centrado explícitamente a Trench */
+.album-trench .hero-contenido {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .titulo-trench {
@@ -867,7 +886,7 @@ h1, h2, h3 {
 /* ----------------------------------------------------- */
 
 /* ----------------------------------------------------- */
-/* ALBUM SCALED ANF ICY                                       */
+/* ALBUM SCALED ANF ICY                                       */
 /* ----------------------------------------------------- */
 
 .album-sai {
@@ -903,20 +922,13 @@ h1, h2, h3 {
 }
 
 .hero-sai {
- display: flex; 
- align-items: center; 
- justify-content: center; 
- 
  padding: 100px 0;
- 
  position: relative; 
  z-index: 1; 
- 
  background-image: url(../imagenes/scaled-and-icy-fondo.jpg); 
  background-size: cover; 
  background-position: center center; 
  background-repeat: no-repeat;
- 
  width: 100vw; 
  position: relative;
  left: 50%;
@@ -924,7 +936,6 @@ h1, h2, h3 {
  margin-left: -50vw;
  margin-right: -50vw; 
  min-height: 550px;
- 
  color: var(--color-texto-claro); 
 }
 
@@ -943,6 +954,14 @@ h1, h2, h3 {
  background-color: rgba(0, 0, 0, 0.4); 
  border-bottom: 1px solid var(--color-scaledandicy); 
  z-index: -1; 
+}
+
+/* Aplicamos las reglas de centrado explícitamente a SAI */
+.album-sai .hero-contenido {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .titulo-sai{
@@ -1000,7 +1019,7 @@ h1, h2, h3 {
 /* ----------------------------------------------------- */
 
 /* ----------------------------------------------------- */
-/* ALBUM CLANCY                                          */
+/* ALBUM CLANCY                                          */
 /* ----------------------------------------------------- */
 
 .album-clancy {
@@ -1036,20 +1055,13 @@ h1, h2, h3 {
 }
 
 .hero-clancy {
- display: flex; 
- align-items: center; 
- justify-content: center; 
- 
  padding: 100px 0;
- 
  position: relative; 
  z-index: 1; 
- 
  background-image: url(../imagenes/clancy-fondo.jpg); 
  background-size: cover; 
  background-position: center center; 
  background-repeat: no-repeat;
- 
  width: 100vw; 
  position: relative;
  left: 50%;
@@ -1057,7 +1069,6 @@ h1, h2, h3 {
  margin-left: -50vw;
  margin-right: -50vw; 
  min-height: 550px;
- 
  color: var(--color-texto-claro); 
 }
 
@@ -1076,6 +1087,14 @@ h1, h2, h3 {
  background-color: rgba(0, 0, 0, 0.4); 
  border-bottom: 1px solid var(--color-clancy); 
  z-index: -1; 
+}
+
+/* Aplicamos las reglas de centrado explícitamente a Clancy */
+.album-clancy .hero-contenido {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .titulo-clancy{
@@ -1133,7 +1152,7 @@ h1, h2, h3 {
 /* ----------------------------------------------------- */
 
 /* ----------------------------------------------------- */
-/* ALBUM BREACH                                          */
+/* ALBUM BREACH                                          */
 /* ----------------------------------------------------- */
 
 .album-breach {
@@ -1169,20 +1188,13 @@ h1, h2, h3 {
 }
 
 .hero-breach {
- display: flex; 
- align-items: center; 
- justify-content: center; 
- 
  padding: 100px 0;
- 
  position: relative; 
  z-index: 1; 
- 
  background-image: url(../imagenes/breach-fondo.jpg); 
  background-size: cover; 
  background-position: center center; 
  background-repeat: no-repeat;
- 
  width: 100vw; 
  position: relative;
  left: 50%;
@@ -1190,7 +1202,6 @@ h1, h2, h3 {
  margin-left: -50vw;
  margin-right: -50vw; 
  min-height: 550px;
- 
  color: var(--color-texto-claro); 
 }
 
@@ -1209,6 +1220,14 @@ h1, h2, h3 {
  background-color: rgba(0, 0, 0, 0.4); 
  border-bottom: 1px solid var(--color-breach); 
  z-index: -1; 
+}
+
+/* Aplicamos las reglas de centrado explícitamente a Breach */
+.album-breach .hero-contenido {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .titulo-breach{
@@ -1264,3 +1283,193 @@ h1, h2, h3 {
 }
 
 /* ----------------------------------------------------- */
+/* ===================================================== */
+/*         ADICIONES PARA DISEÑO RESPONSIVE              */
+/* ===================================================== */
+/* ----------------------------------------------------- */
+
+
+/* MEDIA QUERY PARA TABLETS (Hasta 768px) */
+@media (max-width: 768px) {
+    
+    /* --- NAVEGACIÓN PRINCIPAL --- */
+    .navegacion-contenido {
+        flex-direction: column; /* Apila el logo y el menú */
+        text-align: center;
+    }
+    
+    .navegacion-principal .logo {
+        margin-bottom: 15px;
+        justify-content: center; /* Centra el logo con el texto */
+    }
+
+    .navegacion-principal .menu a {
+        margin: 0 10px; /* Reduce el espacio entre enlaces */
+        font-size: 0.9rem;
+        display: inline-block; /* Asegura que los enlaces sigan en línea */
+    }
+    
+    .navegacion-principal a.boton-acento {
+        margin-left: 15px; /* Ajusta el margen del botón */
+    }
+
+    /* --- SECCIÓN HERO (INDEX y ÁLBUMES) --- */
+    .seccion-superior {
+        min-height: 350px;
+    }
+
+    /* Index Hero */
+    .hero {
+        flex-direction: column; /* Apila imagen y texto en el index */
+        padding: 50px 0;
+    }
+    
+    .info-proyecto, .logo-banda {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Ajuste de Hero para Index */
+    .hero h1 {
+        font-size: 2.5rem; 
+    }
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .top-logo {
+        font-size: 3rem; /* Reduce el tamaño del logo TWENTY ONE PILOTS */
+        margin-top: 20px;
+    }
+    
+    /* Ajuste de Hero para Páginas de Álbumes */
+    .hero-contenido {
+        /* Se adapta del diseño de columna centrada a una columna centrada más compacta */
+        padding: 40px 0;
+    }
+
+    /* Títulos de álbumes en páginas de detalle */
+    .titulo-album {
+        font-size: 2.5rem;
+    }
+    
+    .subtitulo-album {
+        font-size: 1rem;
+        max-width: 90%;
+    }
+
+
+    /* Las portadas se reducen */
+    .portada-grande-self-titled, .portada-grande-vessel, .portada-grande-blurryface, .portada-grande-trench, .portada-grande-sai, .portada-grande-clancy, .portada-grande-breach {
+        max-width: 250px; 
+    }
+    
+    .lore-texto, .detalles-album p {
+        padding: 0 10px;
+    }
+
+
+    /* --- CARDS (DISCOGRAFIA) --- */
+    .cards-contenedor {
+        /* Permite que haya una o dos columnas dependiendo del espacio, pero nunca más */
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+        gap: 20px;
+    }
+}
+
+
+/* MEDIA QUERY PARA TELÉFONOS MÓVILES (Hasta 480px) */
+@media (max-width: 480px) {
+    
+    /* --- NAVEGACIÓN PRINCIPAL --- */
+    .navegacion-principal .menu {
+        flex-direction: column; /* Apila los enlaces del menú */
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .navegacion-principal .menu a {
+        margin: 5px 0;
+        padding: 5px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .navegacion-principal .menu a:last-child {
+        border-bottom: none;
+        margin-top: 10px;
+    }
+    
+    /* Ocultar el nombre de la banda/desarrollador en la navegación para ahorrar espacio */
+    .navegacion-principal .logo p {
+        display: none;
+    }
+
+    /* --- SECCIÓN HERO (INDEX y ÁLBUMES) --- */
+    .hero {
+        padding: 30px 0;
+    }
+
+    /* Ajuste de Hero para Index */
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+    
+    .top-logo {
+        font-size: 2rem; 
+        margin-top: 10px;
+    }
+
+    .botones-hero {
+        flex-direction: column; /* Apila los botones */
+        gap: 10px;
+        margin-top: 20px;
+    }
+    
+    .boton-acento, .boton-secundario {
+        width: 100%; /* Botones de ancho completo */
+        box-sizing: border-box;
+        text-align: center;
+    }
+    
+    /* Ajuste de Hero para Páginas de Álbumes */
+    .titulo-album {
+        font-size: 2rem;
+    }
+    
+    .subtitulo-album {
+        font-size: 0.9rem;
+    }
+
+    .portada-grande-self-titled, .portada-grande-vessel, .portada-grande-blurryface, .portada-grande-trench, .portada-grande-sai, .portada-grande-clancy, .portada-grande-breach {
+        max-width: 200px; 
+    }
+
+
+    /* --- SECCIÓN INFERIOR Y CARDS --- */
+    .titulo-seccion {
+        font-size: 1.5rem;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .cards-contenedor {
+        grid-template-columns: 1fr; /* Una sola columna para móviles */
+        gap: 15px;
+    }
+    
+    .detalles-album {
+        padding: 30px 0;
+    }
+
+    .lista-canciones {
+        padding-left: 20px;
+    }
+    
+    .pie-pagina {
+        font-size: 0.7rem;
+    }
+
+}
